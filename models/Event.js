@@ -1,4 +1,5 @@
 const mongoose = require('mongoose');
+const uuid = require('uuid');
 
 const EventSchema = new mongoose.Schema({
   title: {
@@ -27,6 +28,10 @@ const EventSchema = new mongoose.Schema({
   createdAt: {
     type: Date,
     default: Date.now,
+  },
+  id: {
+    type: String,
+    default: uuid.v4(),
   },
 });
 

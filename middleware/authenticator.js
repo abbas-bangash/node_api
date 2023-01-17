@@ -1,6 +1,5 @@
 // @desc Authenticates user
 const auth = (req, res, next) => {
-  console.log('auth');
   const token = req.headers['token'];
   if (!token) {
     return res
