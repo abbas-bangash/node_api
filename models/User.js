@@ -1,4 +1,5 @@
 const mongoose = require('mongoose');
+import { v4 as uuidv4 } from 'uuid';
 
 const UserSchema = new mongoose.Schema({
   name: {
@@ -24,6 +25,12 @@ const UserSchema = new mongoose.Schema({
   createdAt: {
     type: Date,
     default: Date.now,
+  },
+  id: {
+    type: String,
+    default: function () {
+      uuidv4();
+    },
   },
 });
 
